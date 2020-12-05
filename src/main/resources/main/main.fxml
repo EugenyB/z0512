@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <TextField fx:id="nField" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="140.0" />
+            <Button layoutX="160.0" layoutY="14.0" mnemonicParsing="false" onAction="#calculate" text="Calculate" />
+            <TextField fx:id="resultField" layoutX="14.0" layoutY="51.0" prefHeight="25.0" prefWidth="570.0" />
+            <Button layoutX="14.0" layoutY="87.0" mnemonicParsing="false" onAction="#doTask" prefHeight="25.0" prefWidth="92.0" text="Task" />
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <Menu mnemonicParsing="false" text="Options">
+            <MenuItem mnemonicParsing="false" text="Close" onAction="#close"/>
+<!--            <MenuItem mnemonicParsing="false" text="Color" onAction="#chooseColor"/>-->
+         </Menu>
+         <Menu mnemonicParsing="false" text="Help">
+            <MenuItem mnemonicParsing="false" text="About"/>
+         </Menu>
+      </MenuBar>
+   </top>
+</BorderPane>
