@@ -4,6 +4,8 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import logic.PrimeCalculator;
 
@@ -13,6 +15,7 @@ import java.util.Optional;
 public class Controller {
     public TextField nField;
     public TextField resultField;
+    public Pane mainPane;
 
     private PrimeCalculator calculator;
 
@@ -75,10 +78,21 @@ public class Controller {
         Platform.exit();
     }
 
-//    public void chooseColor() {
-//        ColorPicker colorPicker = new ColorPicker();
-//        colorPicker.show();
-//        Color value = colorPicker.getValue();
-//        System.out.println(value);
-//    }
+    public void chooseColor() {
+        Dialog<Color> dialog = new Dialog<>();
+        ColorPicker picker = new ColorPicker();
+        dialog.getDialogPane().setContent(picker);
+        dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
+        dialog.setResultConverter(button ->{
+            if (button == ButtonType.OK) {
+                return picker.getValue();
+            } else return null;
+        });
+        Optional<Color> color = dialog.showAndWait();
+        color.ifPresent(
+                c -> {
+                    mainPane.setStyle("-fx-background-color:#"+c.toString().substring(2));
+                }
+        );
+    }
 }

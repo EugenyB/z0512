@@ -3,10 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller" fx:id="mainPane">
    <center>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" >
          <children>
             <TextField fx:id="nField" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="140.0" />
             <Button layoutX="160.0" layoutY="14.0" mnemonicParsing="false" onAction="#calculate" text="Calculate" />
@@ -18,11 +17,11 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
          <Menu mnemonicParsing="false" text="Options">
-            <MenuItem mnemonicParsing="false" text="Close" onAction="#close"/>
-<!--            <MenuItem mnemonicParsing="false" text="Color" onAction="#chooseColor"/>-->
+            <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+            <MenuItem mnemonicParsing="false" onAction="#chooseColor" text="Color" />
          </Menu>
          <Menu mnemonicParsing="false" text="Help">
-            <MenuItem mnemonicParsing="false" text="About"/>
+            <MenuItem mnemonicParsing="false" text="About" />
          </Menu>
       </MenuBar>
    </top>
